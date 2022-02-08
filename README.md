@@ -5,7 +5,7 @@ The purpose of this research project is to determine if telehealth has increased
 
 
 ## What other research has been done in this area? Make sure to include 3+ links to related works, as well as a summary of what that work has discovered.
-1. https://www.apa.org/monitor/2020/07/cover-telepsychology
+1. https://www.apa.org/monitor/2020/07/cover-telepsychology  
 Due to the COVID-19 pandemic, individuals are under the stay-at-home order and may struggle with barriers in attaining mental health assistance, such as finances or transportation. Studies have shown that telehealth (or telepsychology) can be as effective as in person delivery of mental health services, and increases access to care. There are some challenges in telehealth, including not being able to completely read social cues from the patient during a phone or video call. Thus, further research is needed to determine the efficacy of telehealth in mental health services. 
 2.
 3.
@@ -28,10 +28,10 @@ https://data.cdc.gov/NCHS/Monthly-Provisional-Counts-of-Deaths-by-Select-Cau/9dz
 
 
 ## Who is your target audience?  Depending on the domain of your data, there may be a variety of audiences interested in using the dataset. You should hone in on one of these audiences.
-General adult population
-Caregivers
-Healthcare providers
-Therapists/teletherapy providers
+General adult population  
+Caregivers  
+Healthcare providers  
+Therapists/teletherapy providers  
 
 Our target audience will mainly be...
 
