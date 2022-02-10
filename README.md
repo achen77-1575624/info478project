@@ -7,7 +7,9 @@ The purpose of this research project is to determine if telehealth has increased
 ## What other research has been done in this area? Make sure to include 3+ links to related works, as well as a summary of what that work has discovered.
 1. https://www.apa.org/monitor/2020/07/cover-telepsychology  
 Due to the COVID-19 pandemic, individuals are under the stay-at-home order and may struggle with barriers in attaining mental health assistance, such as finances or transportation. Studies have shown that telehealth (or telepsychology) can be as effective as in person delivery of mental health services, and increases access to care. There are some challenges in telehealth, including not being able to completely read social cues from the patient during a phone or video call. Thus, further research is needed to determine the efficacy of telehealth in mental health services. 
-2.
+2. https://welkinhealth.com/telehealth-benefits-and-challenges/
+As most things have become virtual such as school classes, conference meetings, and overall communication with peers, visits to the doctor's office have also become more increasingly virtual in the form of telehealth. This new phenomenon has the potential and reasoning to be very successful and very helpful to our society, though there are challenges that come with it. Obviously this creates a much more immediate accessibility for patients, as well as eliminates a long trip for those who may not live close to the doctor's office. It offers an overall convenience factor similar to if the doctor was to examine you at home. This also poses a challenge. being that the doctor isn't actually there with you, so they aren't able to examine your health to the fullest extent. People in society also may not have access to the technology in which telehealth requires, which would making this much less accessible for lower income households. There are definitely many benefits to telehealth, with some challenges that will need to be addressed with further research on the matter.
+
 3.
 
 
