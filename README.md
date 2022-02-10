@@ -1,6 +1,6 @@
-# Names: Niya Park, Matt Condrin, Andrew Chen
-# Group 3
-# Project Proposal
+Names: Niya Park, Matt Condrin, Andrew Chen
+Group 3
+Project Proposal
 
 # Project Description
 
