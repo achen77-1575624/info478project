@@ -31,3 +31,4 @@ suicide_death_plot <- ggplot(deaths_pre_post_covid, aes(x = Date, y = Intentiona
 suicide_percent_plot <- ggplot(deaths_pre_post_covid, aes(x = Date, y = suicide_percent_total_deaths, group = 1)) +
   geom_line() +
   geom_point()
+
