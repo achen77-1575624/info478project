@@ -1,18 +1,39 @@
 ---
-title: "exploratory analysis"
+title: "Exploratory Analysis, Group 3"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-source("../analysis.r")
+setwd("~/Desktop/info478/info478project")
+source("analysis.R")
 ```
 
 ## Background
+### Suicide Rates and Percent Rates
 
-```{r cases of suicide}
+```{r cases of suicide, message=FALSE, warning=FALSE, echo=FALSE}
+suicide_death_plot
+suicide_percent_plot
 ```
 
-```{r rates of tele mental health}
+```{r means of suicide, message=FALSE, warning=FALSE, echo=FALSE}
+mean_plot
+perc_plot
 ```
 
+Based on these graphs, we can interpret that in general, the rates of suicide are decreasing over time (more suicide rates pre-Covid than during Covid). Although the death rates caused by intentional self harm or suicide seem to be increasing compared to 2014, the percentage of all deaths due to suicide has decreased significantly - also shown in the graphs that visualize the mean differences between Covid and Pre-Covid deaths and percent deaths. 
+
+### Rates of Therapy over Covid
+
+```{r rates of therapy over covid, message=FALSE, warning=FALSE, echo=FALSE}
+therapy_over_covid_plot
+```
+
+Based on this graph, we see a steady increase of rates of therapy throughout the Covid Years. This data highly correlates with the previous graphs that indicate the percentage of all deaths due to suicide have been decreasing over time. We speculate that the percentage of all deaths due to suicide may be decreasing over time due to the increased accessibility to therapy - telehealth delivery methods have been rapidly progressing during the stay-at-home order since 2019 in order to safely and better deliver health services to individuals. 
+
+### Rates of Populations Attending Therapy
+
+```{r rates of population attending therapy, message=FALSE, warning=FALSE, echo=FALSE}
+race_therapy_histogram
+```

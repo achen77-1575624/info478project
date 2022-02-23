@@ -89,7 +89,7 @@ mean_plot <- ggplot(mean_deaths_df, aes(x = covid, y = mean_deaths, fill = covid
   scale_fill_discrete(name="Year",
                       breaks=c(1, 2),
                       labels=c("Pre-Covid", "Covid"))+
-  xlab("Years")+ylab("Death Means")
+  labs(title = "Suicide Death Means During Covid and Pre-Covid", x = "Years", y ="Death Means")
 ## the means do not differ, if anything, covid deaths were slightly more prevalent
 
 perc_plot <- ggplot(perc_deaths_df, aes(x = covid, y = perc_deaths, fill = covid)) +
@@ -97,7 +97,7 @@ perc_plot <- ggplot(perc_deaths_df, aes(x = covid, y = perc_deaths, fill = covid
   scale_fill_discrete(name="Year",
                       breaks=c(1, 2),
                       labels=c("Pre-Covid", "Covid"))+
-  xlab("Years")+ylab("Percent Death Means")
+  labs(title = "Mean Percent Suicide Deaths During Covid and Pre-Covid", x = "Years", y = "Percent Death Means")
 ## the means of death percentages show a significant difference between pre-covid and covid years 
 
 
