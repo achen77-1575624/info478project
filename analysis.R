@@ -6,12 +6,12 @@ library(zoo)
 
 # Data Prep
 
-deaths_pre_covid <- read.csv("./data/deaths_pre_covid.csv",
+deaths_pre_covid <- read.csv("../data/deaths_pre_covid.csv",
                              stringsAsFactors = FALSE) %>%
   select(Year, Month, All.Cause, Intentional.Self.Harm..Suicide.) %>%
   mutate(suicide_percent_total_deaths = (Intentional.Self.Harm..Suicide. / All.Cause) * 100)
   
-deaths_covid <- read.csv("./data/deaths_covid.csv",
+deaths_covid <- read.csv("../data/deaths_covid.csv",
                          stringsAsFactors = FALSE) %>%
   select(Year, Month, All.Cause, Intentional.Self.Harm..Suicide.) %>%
   mutate(suicide_percent_total_deaths = (Intentional.Self.Harm..Suicide. / All.Cause) * 100)
@@ -20,7 +20,7 @@ deaths_covid <- read.csv("./data/deaths_covid.csv",
 deaths_pre_post_covid <- rbind(deaths_pre_covid, deaths_covid)
 deaths_pre_post_covid$Date <- as.yearmon(paste(deaths_pre_post_covid$Year, deaths_pre_post_covid$Month), "%Y %m")
 
-mental_care <- read.csv("./data/mental_care.csv",
+mental_care <- read.csv("../data/mental_care.csv",
                         stringsAsFactors = FALSE)
 mental_care$Start.Date <- strptime(mental_care$Time.Period.Start.Date, format = "%m/%d/%Y")
 mental_care$Start.Date = as.Date(mental_care$Start.Date, format = "%m/%d%/%Y")
@@ -116,3 +116,19 @@ race_therapy_histogram <- race_therapy %>%
   geom_col(position = "dodge2") +
   scale_x_discrete(guide = guide_axis(n.dodge=3)) +
   labs(title = "Rates of Population Attending Counseling/Therapy Throughout COVID Across Race", x = "Race", y = "Percentage of Population Attending Counseling/Therapy")
+
+therapy_death_scatter <- therapy_rate %>%
+  rename("Date" = Start.Date)
+therapy_death_scatter$Date = as.yearmon(therapy_death_scatter$Date, "%Y %m")
+deaths_date <- deaths_covid
+deaths_date$Date <- as.yearmon(paste(deaths_date$Year, deaths_date$Month), "%Y %m")
+therapy_death_scatter <- merge(therapy_death_scatter, deaths_date,  by = "Date", all.x = TRUE, all.y=TRUE)
+therapy_death_scatter <- therapy_death_scatter %>%
+  select(Date, Value, Intentional.Self.Harm..Suicide.) %>%
+  group_by(Date) %>%
+  summarize(average_therapy = mean(Value), average_suicide = mean(Intentional.Self.Harm..Suicide.)) %>%
+  ggplot(mapping = aes(average_therapy, average_suicide)) +
+  geom_point(size = 3, stat =) +
+  geom_smooth()
+  labs(title = "Average # of Suicides During COVID with Average Rates of Therapy per Month", x = "Percentage of Population Who Had Gotten Therapy in Last 4 Weeks", y = "Number of Suicides")
+

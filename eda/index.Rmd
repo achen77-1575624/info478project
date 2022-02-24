@@ -5,24 +5,35 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-setwd("~/Desktop/info478/info478project")
-source("analysis.R")
+source("../analysis.R")
 ```
 
 ## Background
+
+In a time of crisis, a population largely suffering from mental health problems can have far-reaching adverse effects. It can affect the healthcare sector with increased hospitalizations from self-harm, especially if there aren't enough therapy resources available. It can affect the community, where hopelessness can translate into depression. Most drastic of all, suicide rates can increase. According to the CDC, suicide is the 10th leading cause of death in the United States.
+
+The COVID pandemic has closed many people off from social contact. Quarantines and social isolation wear away at mental health, and suicide has the risk of following.
+
+Question: How has the COVID pandemic affected suicide rates in the U.S.? Has this been affected by therapy-seeking behaviors?
+
 ### Suicide Rates and Percent Rates
+
 
 ```{r cases of suicide, message=FALSE, warning=FALSE, echo=FALSE}
 suicide_death_plot
 suicide_percent_plot
 ```
 
+Based on these graphs, we can interpret that in general, the rates of suicide are decreasing over time (higher suicide rates pre-Covid than during Covid). Although the death rates caused by intentional self harm or suicide seem to be increasing compared to 2014, the percentage of all deaths due to suicide has decreased significantly since the Covid pandemic has started.
+
+Looking at the specifics, the average number of suicides in 2014 was `r average_suicides_2014`. In 2017, it was `r average_suicides_2017`, which showed an increase. In 2020, however, it dropped to `r average_suicides_2020`.
+
 ```{r means of suicide, message=FALSE, warning=FALSE, echo=FALSE}
 mean_plot
 perc_plot
 ```
 
-Based on these graphs, we can interpret that in general, the rates of suicide are decreasing over time (more suicide rates pre-Covid than during Covid). Although the death rates caused by intentional self harm or suicide seem to be increasing compared to 2014, the percentage of all deaths due to suicide has decreased significantly - also shown in the graphs that visualize the mean differences between Covid and Pre-Covid deaths and percent deaths. 
+These bar graphs visualize the mean differences between Covid and Pre-Covid deaths and percent deaths. In the graph showcasing the number of deaths by suicide or intent of self-harm, the number of suicides during the Covid pandemic inches ahead slighty with `r round(mean_deaths_df$mean_deaths[2], 2)`, while it was `r round(mean_deaths_df$mean_deaths[1], 2)` deaths pre-Covid. However, judging from the line graph that showcases the number of suicides over time, the number of suicides in the United States was steadily increasing over the years before Covid. The fact that the average number of deaths by suicide is so close during the Covid pandemic and before the pandemic can mean that the rate has slowed dramatically. This is evident in the second bar graph that shows the mean suicide rate (measured in percentage of all deaths attributed to suicide) before and during Covid, where a much higher percentage of all deaths in a year were attributed to suicide pre-Covid, with `r round(perc_deaths_df$perc_deaths[1], 2)` percent compared to `r round(perc_deaths_df$perc_deaths[2], 2)` percent.
 
 ### Rates of Therapy over Covid
 
@@ -30,10 +41,18 @@ Based on these graphs, we can interpret that in general, the rates of suicide ar
 therapy_over_covid_plot
 ```
 
-Based on this graph, we see a steady increase of rates of therapy throughout the Covid Years. This data highly correlates with the previous graphs that indicate the percentage of all deaths due to suicide have been decreasing over time. We speculate that the percentage of all deaths due to suicide may be decreasing over time due to the increased accessibility to therapy - telehealth delivery methods have been rapidly progressing during the stay-at-home order since 2019 in order to safely and better deliver health services to individuals. 
+Based on this graph, we see a steady increase of rates of therapy throughout the Covid Years. This data highly correlates with the previous graphs that indicate the percentage of all deaths due to suicide has been decreasing since the Covid pandemic. We speculate that the percentage of all deaths due to suicide may be decreasing over time due to the increased accessibility to therapy - telehealth delivery methods have been rapidly progressing during the stay-at-home order since 2019 in order to safely and better deliver health services to individuals. 
 
 ### Rates of Populations Attending Therapy
 
 ```{r rates of population attending therapy, message=FALSE, warning=FALSE, echo=FALSE}
 race_therapy_histogram
 ```
+
+This graph shows the distribution of ethnicity groups and their usage of therapy or counseling at 2 time points during the Covid pandemic. We can see a wide disparity in the Hispanic, Asian, and black populations vs the white population, with `r race_therapy$2020-08-19[2]` percent of the white population haven gotten therapy in August of 2020. However, in January of 2022, this dispairity lessened, as evident by `r race_therapy$2020`Hispanic population 
+
+```{r therapy vs suicides, message=FALSE, warning=FALSE, echo=FALSE}
+therapy_death_scatter
+```
+
+Finally, in this scatterplot, we can see a very slight negative correlation between the percentage of the population who had gotten therapy in the last 4 weeks and the number of suicides. Each data point represents a singular month in the Covid pandemic. As the percentage of the population that had received therapy increased. the number of suicides was slightly correlated with decreasing. This points to therapy being an effective suicide prevention.
