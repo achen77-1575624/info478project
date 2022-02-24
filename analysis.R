@@ -110,6 +110,8 @@ therapy_over_covid_plot <- ggplot(therapy_rate, mapping = aes(x = Start.Date, y 
   labs(title = "Percentage of Population Who had Received Therapy/Counseling in the Last 4 Weeks Across COVID", x = "Date", y = "Percent of Population Who had Received Therapy/Counseling")
 
 ## Histogram(?) of Races, comparing 2 different time points and those who had attended counseling/therapy
+race_therapy <- race_therapy %>%
+  rename(aug_2020 = 2, jan_2022 = 3)
 race_therapy_histogram <- race_therapy %>%
   gather(Start.Date, val, -Subgroup) %>%
   ggplot(aes(Subgroup, val, fill = Start.Date)) +
@@ -129,6 +131,5 @@ therapy_death_scatter <- therapy_death_scatter %>%
   summarize(average_therapy = mean(Value), average_suicide = mean(Intentional.Self.Harm..Suicide.)) %>%
   ggplot(mapping = aes(average_therapy, average_suicide)) +
   geom_point(size = 3, stat =) +
-  geom_smooth()
+  geom_smooth() +
   labs(title = "Average # of Suicides During COVID with Average Rates of Therapy per Month", x = "Percentage of Population Who Had Gotten Therapy in Last 4 Weeks", y = "Number of Suicides")
-

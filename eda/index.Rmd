@@ -49,7 +49,7 @@ Based on this graph, we see a steady increase of rates of therapy throughout the
 race_therapy_histogram
 ```
 
-This graph shows the distribution of ethnicity groups and their usage of therapy or counseling at 2 time points during the Covid pandemic. We can see a wide disparity in the Hispanic, Asian, and black populations vs the white population, with `r race_therapy$2020-08-19[2]` percent of the white population haven gotten therapy in August of 2020. However, in January of 2022, this dispairity lessened, as evident by `r race_therapy$2020`Hispanic population 
+This graph shows the distribution of ethnicity groups and their usage of therapy or counseling at 2 time points during the Covid pandemic. We can see a wide disparity in the Hispanic, Asian, and black populations vs the white population, with `r race_therapy$aug_2020[2]` percent of the white population haven gotten therapy in August of 2020. However, in January of 2022, this disparity lessened, as evident by `r race_therapy$jan_2022[1]` percent of the Hispanic population having gotten therapy in the last 4 weeks, compared to `r race_therapy$aug_2020[1]` percent in AUgust of 2020. This is very close to the white population in January 2022, which had `r race_therapy$jan_2022[2]` percent of the population getting therapy.
 
 ```{r therapy vs suicides, message=FALSE, warning=FALSE, echo=FALSE}
 therapy_death_scatter
