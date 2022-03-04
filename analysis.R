@@ -6,12 +6,12 @@ library(zoo)
 
 # Data Prep
 
-deaths_pre_covid <- read.csv("../data/deaths_pre_covid.csv",
+deaths_pre_covid <- read.csv("./data/deaths_pre_covid.csv",
                              stringsAsFactors = FALSE) %>%
   select(Year, Month, All.Cause, Intentional.Self.Harm..Suicide.) %>%
   mutate(suicide_percent_total_deaths = (Intentional.Self.Harm..Suicide. / All.Cause) * 100)
   
-deaths_covid <- read.csv("../data/deaths_covid.csv",
+deaths_covid <- read.csv("./data/deaths_covid.csv",
                          stringsAsFactors = FALSE) %>%
   select(Year, Month, All.Cause, Intentional.Self.Harm..Suicide.) %>%
   mutate(suicide_percent_total_deaths = (Intentional.Self.Harm..Suicide. / All.Cause) * 100)
@@ -20,7 +20,7 @@ deaths_covid <- read.csv("../data/deaths_covid.csv",
 deaths_pre_post_covid <- rbind(deaths_pre_covid, deaths_covid)
 deaths_pre_post_covid$Date <- as.yearmon(paste(deaths_pre_post_covid$Year, deaths_pre_post_covid$Month), "%Y %m")
 
-mental_care <- read.csv("../data/mental_care.csv",
+mental_care <- read.csv("./data/mental_care.csv",
                         stringsAsFactors = FALSE)
 mental_care$Start.Date <- strptime(mental_care$Time.Period.Start.Date, format = "%m/%d/%Y")
 mental_care$Start.Date = as.Date(mental_care$Start.Date, format = "%m/%d%/%Y")
