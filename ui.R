@@ -28,10 +28,10 @@ introduction <- tabPanel(
 )
 
 panel1<- tabPanel(
-    titlePanel("Suicide Rates and Percent Rates"),
+    titlePanel("Rates"),
     sidebarLayout(
       sidebarPanel(
-        selectInput('plot1var', 'plot1var', choices = c("Intentional.Self.Harm..Suicide.", "suicide_percent_total_deaths"), 
+        selectInput('plot1var', 'Suicide Measurement', choices = c("Intentional.Self.Harm..Suicide.", "suicide_percent_total_deaths"), 
                     selected = "Intentional.Self.Harm..Suicide.")
       ),
       mainPanel(
@@ -50,10 +50,10 @@ panel1<- tabPanel(
 
 
 panel2<- tabPanel(
-    titlePanel("Means of Total Suicides and Percentage of Deaths"),
+    titlePanel("Means"),
     sidebarLayout(
       sidebarPanel(
-        selectInput('plot2var', 'plot2var', choices = c("Intentional.Self.Harm..Suicide.", "suicide_percent_total_deaths"), 
+        selectInput('plot2var', 'Suicide Measurement', choices = c("Intentional.Self.Harm..Suicide.", "suicide_percent_total_deaths"), 
                     selected = "Intentional.Self.Harm..Suicide.")
       ),
       mainPanel(
@@ -74,16 +74,32 @@ panel2<- tabPanel(
 )
 
 panel3<- tabPanel(
-    titlePanel("panel 3"),
-    mainPanel(
-        h1("panel 3"),
+    titlePanel("Rates of Therapy"),
+    sidebarLayout(
+      sidebarPanel(
+        selectInput('plot3var', 'Rates of Therapy Across:', choices = c("Across Time", "Across Race/Ethnicity"), 
+                    selected = "Across Time")
+      ),
+      mainPanel(
+          plotOutput("plot3"),
+          p("Based on this graph, we see a steady increase of rates of therapy throughout the Covid Years.
+            This data highly correlates with the previous graphs that indicate the percentage of all deaths due
+            to suicide has been decreasing since the Covid pandemic. We speculate that the percentage of all
+            deaths due to suicide may be decreasing over time due to the increased accessibility to
+            therapy - telehealth delivery methods have been rapidly progressing during the stay-at-home order
+            since 2019 in order to safely and better deliver health services to individuals.")
+      )
     )
 )
 
 insights<- tabPanel(
     titlePanel("Insights"),
-    mainPanel(
-        h1("Insights"),
+    sidebarLayout(
+      sidebarPanel(
+      ),
+      mainPanel(
+          h1("Insights"),
+      )
     )
 )
 
