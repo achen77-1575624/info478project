@@ -40,9 +40,9 @@ panel1<- tabPanel(
           time (higher suicide rates pre-Covid than during Covid). Although the death rates caused by intentional
           self harm or suicide seem to be increasing compared to 2014, the percentage of all deaths due to suicide
           has decreased significantly since the Covid pandemic has started."),
-        p("Looking at the specifics, the average number of suicides in 2014 was `r average_suicides_2014`.
-          In 2017, it was `r average_suicides_2017`, which showed an increase. In 2020, however, it dropped to
-          `r average_suicides_2020`.")
+        p("Looking at the specifics, the average number of suicides in 2014 was 3569.
+          In 2017, it was 3931, which showed an increase. In 2020, however, it dropped to
+          3843.")
       )
     )
 )
@@ -60,15 +60,13 @@ panel2<- tabPanel(
         plotOutput("plot2"),
         p("These bar graphs visualize the mean differences between Covid and Pre-Covid deaths and percent
         deaths. In the graph showcasing the number of deaths by suicide or intent of self-harm, the number of
-        suicides during the Covid pandemic inches ahead slighty with `r round(mean_deaths_df$mean_deaths[2], 2)`,
-        while it was `r round(mean_deaths_df$mean_deaths[1], 2)` deaths pre-Covid. However, judging from the
+        suicides during the Covid pandemic inches ahead slighty with 3858.37, while it was 3819.61 deaths pre-Covid. However, judging from the
         line graph that showcases the number of suicides over time, the number of suicides in the United States
         was steadily increasing over the years before Covid. The fact that the average number of deaths by
         suicide is so close during the Covid pandemic and before the pandemic can mean that the rate has slowed
         dramatically. This is evident in the second bar graph that shows the mean suicide rate (measured in
         percentage of all deaths attributed to suicide) before and during Covid, where a much higher percentage
-        of all deaths in a year were attributed to suicide pre-Covid, with `r round(perc_deaths_df$perc_deaths[1], 2)`
-        percent compared to `r round(perc_deaths_df$perc_deaths[2], 2)` percent.")
+        of all deaths in a year were attributed to suicide pre-Covid, with 1.67 percent compared to 1.4 percent.")
       )
     )
 )
