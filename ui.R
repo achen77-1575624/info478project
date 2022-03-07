@@ -14,16 +14,29 @@ data(mpg)
 
 introduction <- tabPanel(
     titlePanel("Introduction"),
-    mainPanel(
-        h1("Introduction"),
+    mainPanel(width = 12,
+        h1("Suicide Rates in COVID"),
+        h2("Introduction"),
         p("In a time of crisis, a population largely suffering from mental health problems can have far-reaching
           adverse effects. It can affect the healthcare sector with increased hospitalizations from self-harm,
           especially if there aren't enough therapy resources available. It can affect the community, where
           hopelessness can translate into depression. Most drastic of all, suicide rates can increase. According
-          to the CDC, suicide is the 10th leading cause of death in the United States. The COVID pandemic has
+          to the CDC (2022), suicide is the 10th leading cause of death in the United States. The COVID pandemic has
           closed many people off from social contact. Quarantines and social isolation wear away at mental health,
-          and suicide has the risk of following. In particular, the question we wish to answer is: How has the
-          COVID pandemic affected suicide rates in the U.S.? Has this been affected by therapy-seeking behaviors?")
+          and suicide has the risk of following (Calati, 2019). In particular, the question we wish to answer is: How has the
+          COVID pandemic affected suicide rates in the U.S.? Has this been affected by therapy-seeking behaviors?"),
+        h2("Hypothesis"),
+        p("We hypothesize that through the COVID-19 pandemic, suicide rates should rise due to an increased rate of
+          social isolation in quarantine. Therapy rates may rise, but might not be enough to circumvent any rises
+          in suicide rates."),
+        h2("Methods"),
+        p("We will collect multiple datasets provide by the CDC, including those regarding death information pre and
+          post COVID, rates of therapy pre and post COVID, and other demographical information like ethnicity for rates
+          of therapy."),
+        p("We will congregate these datasets in R and clean them for relevant data. We'll graph different variables
+          and see if there are any correlations."),
+        uiOutput("intro_img") %>%
+          tagAppendAttributes(class = 'intro_img')
     )
 )
 
@@ -90,13 +103,10 @@ panel3<- tabPanel(
     )
 )
 
-insights<- tabPanel(
+insights <- tabPanel(
     titlePanel("Insights"),
-    sidebarLayout(
-      sidebarPanel(
-      ),
-      mainPanel(
-          h1("Insights"),
+      mainPanel(width = 12,
+          h2("Insights"),
           p("Taking all of these graphs and data into account, we can see that not only is there a trend in a decrease 
             suicide rates over time (during Covid), but that there is a trend in an increase of rates of therapy over time.
             In addition to this, from our dataset, every ethnicity has seen at least a slight increase in therapy rates during
@@ -107,19 +117,49 @@ insights<- tabPanel(
             health and finding resources for mental crises. During the Covid pandemic, telehealth has been a rapidly developing
             method of therapy delivery that has been able to increase accessibility towards attaining mental health care. 
             Therefore, we speculate that these factors may have a role with the decrease in suicide rates and increase in 
-            rates of therapy over time.")
+            rates of therapy over time, despite the increase in social isolation. Our hypothesis is therefore only partly
+            supported. Therapy rates did rise, but suicide rates dropped as well, possibly as a result."),
+          uiOutput("insights_img") %>%
+            tagAppendAttributes(class = 'insights_img')
       )
-    )
 )
 
-my_ui <- navbarPage(
-    theme = shinytheme("flatly"),
-    tags$div("Final Deliverable"),
-    introduction,
-    panel1,
-    panel2,
-    panel3,
-    insights
+references <- tabPanel(
+  titlePanel("References"),
+  mainPanel(width = 12,
+    h1("References") %>%
+      tagAppendAttributes(class = 'references'),
+    p("Calati, R., Ferrari, C., Brittner, M., Oasi, O., Olie, E., Carvalho, A. F., & Courtet, P. (2019). 
+      Suicidal thoughts and behaviors and social isolation: A narrative review of the literature. Journal of 
+      Affective Disorders, 245, 653-667. https://doi.org/10.1016/j.jad.2018.11.022"),
+    p("Centers for Disease Control and Prevention. (2020, September 23). Mental health care in the last
+      4 weeks. Centers for Disease Control and Prevention. Retrieved from
+      https://data.cdc.gov/NCHS/Mental-Health-Care-in-the-Last-4-Weeks/yni7-er2q"),
+    p("Centers for Disease Control and Prevention. (2021, February 3). Monthly counts of deaths by
+      select causes, 2014-2019. Centers for Disease Control and Prevention. Retrieved from
+      https://data.cdc.gov/NCHS/Monthly-Counts-of-Deaths-by-Select-Causes-2014-201/bxq8-mugm"),
+    p("Centers for Disease Control and Prevention. (2021, February 3). Monthly provisional counts
+      of deaths by select causes, 2020-2022. Centers for Disease Control and Prevention.
+      Retrieved from https://data.cdc.gov/NCHS/Monthly-Provisional-Counts-of-Deaths-by-Select-Cau/9dzk-mvmi"),
+    p("Centers for Disease Control and Prevention. (2022, February 24). Facts about suicide.
+      Centers for Disease Control and Prevention. Retrieved from https://www.cdc.gov/suicide/facts/index.html")
+  )
+)
+
+my_ui <- fluidPage(
+    tags$head(
+      tags$link(rel = "stylesheet", type = "text/css", href = "styling.css")
+    ),
+    navbarPage(
+      theme = shinytheme("flatly"),
+      tags$div("Final Deliverable"),
+      introduction,
+      panel1,
+      panel2,
+      panel3,
+      insights,
+      references
+    )
 )
 shinyUI(my_ui)
 

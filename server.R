@@ -12,6 +12,10 @@ source("./analysis.R")
 
 my_server <- function(input, output) {
   
+  output$intro_img <- renderUI({
+    tags$img(src = "https://www.healthshots.com/wp-content/uploads/2020/10/covid-19-and-anxiety-and-mental-health.jpg")
+  })
+  
   output$plot1 <- renderPlot({
     plot1 <- ggplot(deaths_pre_post_covid, aes_string(x = deaths_pre_post_covid$Date, y = input$plot1var, group = 1)) +
       geom_line() +
@@ -61,6 +65,10 @@ my_server <- function(input, output) {
         labs(title = "Rates of Population Attending Counseling/Therapy Throughout COVID Across Race", x = "Race", y = "Percentage of Population Attending Counseling/Therapy")
     }
     print(plot3)
+  })
+  
+  output$insights_img <- renderUI({
+    tags$img(src = "https://i.postimg.cc/28YbwpNx/insights-2.jpg")
   })
   
 }
