@@ -97,6 +97,17 @@ insights<- tabPanel(
       ),
       mainPanel(
           h1("Insights"),
+          p("Taking all of these graphs and data into account, we can see that not only is there a trend in a decrease 
+            suicide rates over time (during Covid), but that there is a trend in an increase of rates of therapy over time.
+            In addition to this, from our dataset, every ethnicity has seen at least a slight increase in therapy rates during
+            January 2022 compared to August 2020 (pre-Covid). In particular, Hispanic or Latino and Non-Hispanic, other races
+            and multiple races have seen a greater difference compared to pre-Covid therapy rates."),
+          p("From these trends, we can identify that there may be a relationship between suicide rates and therapy rates 
+            during Covid. In this observation, we can identify that there has been a great push towards the acceptance of mental
+            health and finding resources for mental crises. During the Covid pandemic, telehealth has been a rapidly developing
+            method of therapy delivery that has been able to increase accessibility towards attaining mental health care. 
+            Therefore, we speculate that these factors may have a role with the decrease in suicide rates and increase in 
+            rates of therapy over time.")
       )
     )
 )
