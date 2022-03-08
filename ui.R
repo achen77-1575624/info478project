@@ -123,6 +123,10 @@ insights <- tabPanel(
             Therefore, we speculate that these factors may have a role with the decrease in suicide rates and increase in 
             rates of therapy over time, despite the increase in social isolation. Our hypothesis is therefore only partly
             supported. Therapy rates did rise, but suicide rates dropped as well, possibly as a result."),
+          h2("Limitations"),
+          p("1. Timeframe of datasets"),
+          p("2. Didn't account for other potential covariate factors"),
+          p("3. More diverse datasets"),
           uiOutput("insights_img") %>%
             tagAppendAttributes(class = 'insights_img')
       )
