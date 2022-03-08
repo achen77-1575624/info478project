@@ -30,7 +30,7 @@ introduction <- tabPanel(
           social isolation in quarantine. Therapy rates may rise, but might not be enough to circumvent any rises
           in suicide rates."),
         h2("Methods"),
-        p("We will collect multiple datasets provide by the CDC, including those regarding death information pre and
+        p("We will collect multiple datasets provided by the CDC, including those regarding death information pre and
           post COVID, rates of therapy pre and post COVID, and other demographical information like ethnicity for rates
           of therapy."),
         p("We will congregate these datasets in R and clean them for relevant data. We'll graph different variables
@@ -98,7 +98,11 @@ panel3<- tabPanel(
             to suicide has been decreasing since the Covid pandemic. We speculate that the percentage of all
             deaths due to suicide may be decreasing over time due to the increased accessibility to
             therapy - telehealth delivery methods have been rapidly progressing during the stay-at-home order
-            since 2019 in order to safely and better deliver health services to individuals.")
+            since 2019 in order to safely and better deliver health services to individuals."),
+          p("We can also see a trend when we sort therapy rates by ethnicities pre and post COVID. Before the pandemic,
+            there were large disparities in different ethnicities in regards to access to therapy. However,
+            during COVID, telehealth may have increased accessibility to people, leveraging opportunity
+            for treatment.")
       )
     )
 )
